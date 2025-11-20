@@ -1,44 +1,86 @@
-# Resume Filter Bot (Upgraded)
+🚀 Resume Filter Bot
 
-This upgraded Resume Filter Bot matches resumes against required skills and exports results to CSV and Excel.
+A smart automation tool built using Python, designed to parse, filter, and score resumes based on required skills.
+Exports results to CSV and Excel — perfect for HR automation, candidate shortlisting, and ATS-style screening.
 
+✨ Features
 
-## Features
+✔ Parses TXT and PDF resumes
+✔ Filters resumes based on required skills
+✔ Skill weighting and scoring system (0–1)
+✔ Exports results to CSV and Excel (XLSX)
+✔ Clean folder structure
+✔ Fully customizable skill list using skills.json
+✔ Simple CLI-based usage
 
-- Parses `.txt` and `.pdf` resumes (PDF parsing requires `PyPDF2`).
-- Configurable skill list with weights (via `skills.json`).
-- Scores resumes (normalized 0-1) and filters by minimum score.
-- Exports results to CSV and Excel.
+📁 Folder Structure
+resume-filter-bot/
+│── main.py
+│── parser.py
+│── filter.py
+│── exporter.py
+│── skills.json
+│── requirements.txt
+│── README.md
+└── resumes/
+      ├── sample_1.txt
+      ├── sample_2.txt
 
-## Quick start
-
-1. Install requirements:
-
-```bash
+🛠️ Installation
+1. Install dependencies
 pip install -r requirements.txt
-```
 
-2. Put resumes into the `resumes/` folder. Supported: `.txt`, `.pdf`.
+▶️ How to Run
+Basic run
+python main.py
 
-3. Edit `skills.json` (optional) to provide skills and weights.
-
-4. Run:
-
-```bash
+Advanced usage
 python main.py --resumes resumes --skills skills.json --min-score 0.0 --out-prefix results
-```
 
-## Example `skills.json`
-
-```json
+Arguments
+Argument	Description
+--resumes	Path to resumes folder
+--skills	Skill list JSON file
+--min-score	Minimum score (0–1) to include candidates
+--out-prefix	Output name for CSV/XLSX
+📊 Example skills.json
 [
   {"name": "python", "weight": 1.0},
   {"name": "selenium", "weight": 1.0},
-  {"name": "pytest", "weight": 0.8}
+  {"name": "pytest", "weight": 0.8},
+  {"name": "java", "weight": 0.6},
+  {"name": "javascript", "weight": 0.5}
 ]
-```
 
-## Notes
+📝 Output
 
-- If `PyPDF2` is not installed, PDF parsing will be skipped but the rest will work.
-- The project is ready to upload to GitHub as a resume-backed project.
+After running the bot, you get:
+
+results.csv
+
+results.xlsx
+
+Each containing:
+
+name	score	raw_score	matched_skills
+sample_1	0.90	3.4	python, selenium, pytest
+🎯 Ideal Use Cases
+
+HR resume shortlisting
+
+Screening candidates for automation roles
+
+ATS basic filtering
+
+Portfolio & GitHub project
+
+Python + automation skill demonstration
+
+🤝 Contributions
+
+Pull requests and improvements are welcome!
+
+👨‍💻 Author
+
+Rohith Tommandru
+Python | Selenium | Automation Engineer
