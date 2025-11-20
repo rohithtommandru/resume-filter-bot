@@ -1,0 +1,7 @@
+[
+  {"name": "python", "weight": 1.0},
+  {"name": "selenium", "weight": 1.0},
+  {"name": "pytest", "weight": 0.8},
+  {"name": "java", "weight": 0.6},
+  {"name": "javascript", "weight": 0.5}
+]
